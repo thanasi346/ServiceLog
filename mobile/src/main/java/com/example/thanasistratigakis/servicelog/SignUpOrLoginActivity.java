@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.parse.Parse;
+
 /**
  * Created by ThanasiStratigakis on 5/18/15.
  */
@@ -13,6 +15,10 @@ public class SignUpOrLoginActivity extends Activity{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "bFlfAKQNEWDRvaNX7ikcJ0ZaSKbcKc6W98InH9Ie", "Idlc9KjBgLFvLakk2jUMBpUEfvUNZemux6tT10p9");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_or_login);
 
