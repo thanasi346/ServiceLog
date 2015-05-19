@@ -14,7 +14,7 @@ public class SignUpOrLoginActivity extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signup_or_login);
+        setContentView(R.layout.activity_signup_or_login);
 
 
         // btnLog click handler (login button)

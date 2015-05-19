@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme" >
         android:name=".SampleApplication">
         <activity
-            android:name=".SignUpOrLoginActivity"
+            android:name=".SignUpActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
