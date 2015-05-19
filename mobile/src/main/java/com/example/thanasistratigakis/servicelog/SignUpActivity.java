@@ -1,9 +1,16 @@
 package com.example.thanasistratigakis.servicelog;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 /**
  * Created by ThanasiStratigakis on 5/18/15.
@@ -53,14 +60,42 @@ public class SignUpActivity extends Activity {
                 }
                 validationErrorMessage.append(".");
 
+                // If there is a validation error, display the error
+                if (validationError) {
+                    Toast.makeText(SignUpActivity.this, validationErrorMessage.toString(), Toast.LENGTH_LONG).show();
+                    return;
+                }
 
 
+                // Set up a progress dialog
+                final ProgressDialog dlg = new ProgressDialog(SignUpActivity.this);
+                dlg.setTitle("Please wait.");
+                dlg.setMessage("Signing up. Please wait.");
+                dlg.show();
 
+                // Set up a new Parse user
+                ParseUser user = new ParseUser();
+                user.setUsername(usernameView.getText().toString());
+                user.setPassword(passwordView.getText().toString());
+
+                // Call the Parse signup method
+                user.signUpInBackground(new SignUpCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        dlg.dismiss();
+                        if (e != null) {
+                            // Show the error message
+                            Toast.makeText(SignUpActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        } else {
+                            // Start an intent for the dispatch activity
+                            Intent intent = new Intent (SignUpActivity.this, DispatchActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        }
+                    }
+                });
             }
         });
-
-
-
     }
 
     // checks if the text is > 0
