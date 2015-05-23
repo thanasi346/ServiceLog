@@ -10,7 +10,7 @@
     android:weightSum="1">
 
     <TabHost
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:id="@+id/tabHost"
         android:layout_gravity="left|top"
@@ -21,15 +21,11 @@
             android:layout_height="fill_parent"
             android:orientation="vertical">
 
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"></TabWidget>
-
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:id="@+id/tabLog"
@@ -58,6 +54,13 @@
                     android:orientation="vertical"
                     android:layout_gravity="right|top"></LinearLayout>
             </FrameLayout>
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"></TabWidget>
+
         </LinearLayout>
     </TabHost>
 </LinearLayout>
