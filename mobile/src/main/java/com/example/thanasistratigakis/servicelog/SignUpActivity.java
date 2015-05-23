@@ -10,8 +10,11 @@ import android.widget.Toast;
 
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
+
+import java.util.ArrayList;
 
 /**
  * Created by ThanasiStratigakis on 5/18/15.
@@ -27,7 +30,8 @@ public class SignUpActivity extends Activity {
         super.onCreate(saveInstanceState);
 
         // Enable Local Datastore.
-        Parse.enableLocalDatastore(this);
+        //Parse.enableLocalDatastore(this);
+
         Parse.initialize(this, "bFlfAKQNEWDRvaNX7ikcJ0ZaSKbcKc6W98InH9Ie", "Idlc9KjBgLFvLakk2jUMBpUEfvUNZemux6tT10p9");
 
         setContentView(R.layout.activity_signup);
@@ -83,6 +87,12 @@ public class SignUpActivity extends Activity {
                 ParseUser user = new ParseUser();
                 user.setUsername(usernameView.getText().toString());
                 user.setPassword(passwordView.getText().toString());
+                user.put("FirstName", "Shanasi");
+                user.put("LastName", "Stratigakis");
+                ArrayList<ParseObject> organizations = new ArrayList<ParseObject>();
+                user.put("CurrentOrganizations", organizations);
+
+                        //ParseUser.getCurrentUser()
 
                 // Call the Parse signup method
                 user.signUpInBackground(new SignUpCallback() {
@@ -94,7 +104,7 @@ public class SignUpActivity extends Activity {
                             Toast.makeText(SignUpActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         } else {
                             // Start an intent for the dispatch activity
-                            Intent intent = new Intent (SignUpActivity.this, DispatchActivity.class);
+                            Intent intent = new Intent(SignUpActivity.this, DispatchActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                         }
