@@ -33,7 +33,7 @@
 
                 <LinearLayout
                     android:id="@+id/tabLog"
-                    android:layout_width="337dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:orientation="vertical">
 
