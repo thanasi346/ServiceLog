@@ -24,6 +24,9 @@ public class SignUpActivity extends Activity {
     private EditText usernameView;
     private EditText passwordView;
     private EditText passwordReView;
+    private EditText nameFirstView;
+    private EditText nameLastView;
+    private EditText yearOfGraduation;
 
     @Override
     public void onCreate(Bundle saveInstanceState){
@@ -40,6 +43,9 @@ public class SignUpActivity extends Activity {
         usernameView = (EditText) findViewById(R.id.txtUsername);
         passwordView = (EditText) findViewById(R.id.txtPassword);
         passwordReView = (EditText) findViewById(R.id.txtPasswordRe);
+        nameFirstView = (EditText) findViewById(R.id.txtNameFirst);
+        nameLastView = (EditText) findViewById(R.id.txtNameLast);
+        yearOfGraduation = (EditText) findViewById(R.id.txtYearOfGraduation);
 
 
         // Set up the submit button click handler
@@ -68,6 +74,28 @@ public class SignUpActivity extends Activity {
                     validationError = true;
                     validationErrorMessage.append("enter the same password twice");
                 }
+                if (isEmpty(nameFirstView)){
+                    if (validationError){
+                        validationErrorMessage.append(", and ");
+                    }
+                    validationError = true;
+                    validationErrorMessage.append("enter your First Name");
+                }
+                if (isEmpty(nameLastView)){
+                    if (validationError){
+                        validationErrorMessage.append(", and ");
+                    }
+                    validationError = true;
+                    validationErrorMessage.append("enter your Last Name");
+                }
+                if (isEmpty(yearOfGraduation)){
+                    if (validationError){
+                        validationErrorMessage.append(", and ");
+                    }
+                    validationError = true;
+                    validationErrorMessage.append("enter your Year Of Graduation");
+                }
+
                 validationErrorMessage.append(".");
 
                 // If there is a validation error, display the error
@@ -87,8 +115,9 @@ public class SignUpActivity extends Activity {
                 ParseUser user = new ParseUser();
                 user.setUsername(usernameView.getText().toString());
                 user.setPassword(passwordView.getText().toString());
-                user.put("FirstName", "Shanasi");
-                user.put("LastName", "Stratigakis");
+                user.put("FirstName", nameFirstView.getText().toString());
+                user.put("LastName", nameLastView.getText().toString());
+                user.put("GraduationYear", Integer.parseInt(yearOfGraduation.getText().toString()));
                 ArrayList<ParseObject> organizations = new ArrayList<ParseObject>();
                 user.put("CurrentOrganizations", organizations);
 

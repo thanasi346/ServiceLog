@@ -39,8 +39,24 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/txtNameFirst"
+        android:layout_gravity="center_horizontal"
+        android:hint="First Name" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNameLast"
+        android:hint="Last Name" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtYearOfGraduation"
+        android:layout_gravity="center_horizontal"
+        android:hint="Year of Graduation"
+        android:autoText="false"
+        android:inputType="number" />
 
     <Button
         android:layout_width="wrap_content"

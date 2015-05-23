@@ -1,7 +1,7 @@
 package com.example.thanasistratigakis.servicelog;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -9,6 +9,8 @@ import com.parse.Parse;
 
 
 public class MainActivity extends ActionBarActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,20 @@ public class MainActivity extends ActionBarActivity {
         Parse.initialize(this, "bFlfAKQNEWDRvaNX7ikcJ0ZaSKbcKc6W98InH9Ie", "Idlc9KjBgLFvLakk2jUMBpUEfvUNZemux6tT10p9");
 
         setContentView(R.layout.activity_main);
+
+//        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+//
+//        tabHost.setup();
+//        TabHost.TabSpec tabSpec = tabHost.newTabSpec("logTab");
+//        tabSpec.setContent(R.id.tabLog);
+//        tabSpec.setIndicator("Log");
+//        tabHost.addTab(tabSpec);
+//
+//        tabSpec = tabHost.newTabSpec("messengerTab");
+//        tabSpec.setContent(R.id.tabMessenger);
+//        tabSpec.setIndicator("Msg");
+//        tabHost.addTab(tabSpec);
+
     }
 
 
