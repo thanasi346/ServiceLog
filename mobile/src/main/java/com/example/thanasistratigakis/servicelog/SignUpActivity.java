@@ -120,6 +120,7 @@ public class SignUpActivity extends Activity {
                 user.put("GraduationYear", Integer.parseInt(yearOfGraduation.getText().toString()));
                 ArrayList<ParseObject> organizations = new ArrayList<ParseObject>();
                 user.put("CurrentOrganizations", organizations);
+                user.put("UserType", "Student");
 
                         //ParseUser.getCurrentUser()
 

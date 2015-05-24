@@ -7,7 +7,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
-
 import com.parse.Parse;
 
 import static com.example.thanasistratigakis.servicelog.R.id.tabLog;
@@ -68,6 +67,8 @@ public class MainActivity extends ActionBarActivity {
         fragmentTransaction.add(R.id.tabMyAccount, myAccFragment);
         // only write this line once (or else it will crash)
         fragmentTransaction.commit();
+
+        Location brooklynCity = new Location("CitySquashBrooklyn", "140 74th Street, Brooklyn, NY 11209", "We help kids learn squash!", "jaNGcb10Ry");
 
     }
 

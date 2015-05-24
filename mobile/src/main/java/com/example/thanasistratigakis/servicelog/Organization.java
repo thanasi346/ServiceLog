@@ -10,6 +10,18 @@ import com.parse.ParseObject;
 @ParseClassName("Organization")
 public class Organization extends ParseObject {
 
+    public Organization() {
+        // default constructor
+    }
+
+    public Organization (String name, String locationId){
+        put("Name", name);
+        put("Locations", locationId);
+        saveInBackground();
+    }
+
+
+
 //just set methods but use .put
 
 }

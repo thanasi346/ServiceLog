@@ -11,4 +11,18 @@ import com.parse.ParseObject;
 public class Location extends ParseObject {
 
 
+    public Location(){
+        // default constructor
+    }
+
+    public Location (String name, String address, String description, String userAdmin){
+        put("name", name);
+        put("address", address);
+        put("description", description);
+        put("admins", userAdmin);
+        saveInBackground();
+
+        //ArrayList<ParseObject> organizations = new ArrayList<ParseObject>();
+    }
+
 }
