@@ -14,9 +14,10 @@ public class Organization extends ParseObject {
         // default constructor
     }
 
-    public Organization (String name, String locationId){
-        put("Name", name);
-        put("Locations", locationId);
+    public Organization (String name, String adminId, String locationId){
+        put("name", name);
+        put("admins", adminId);
+        put("locations", locationId);
         saveInBackground();
     }
 

@@ -22,6 +22,7 @@ public class DispatchActivity extends Activity {
 
         ParseObject.registerSubclass(Organization.class);
         ParseObject.registerSubclass(Location.class);
+        ParseObject.registerSubclass(ServiceRole.class);
         Parse.initialize(this, "bFlfAKQNEWDRvaNX7ikcJ0ZaSKbcKc6W98InH9Ie", "Idlc9KjBgLFvLakk2jUMBpUEfvUNZemux6tT10p9");
 
 

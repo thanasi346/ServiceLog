@@ -15,11 +15,11 @@ public class Location extends ParseObject {
         // default constructor
     }
 
-    public Location (String name, String address, String description, String userAdmin){
+    public Location (String name, String address, String description, String adminId){
         put("name", name);
         put("address", address);
         put("description", description);
-        put("admins", userAdmin);
+        put("admins", adminId);
         saveInBackground();
 
         //ArrayList<ParseObject> organizations = new ArrayList<ParseObject>();

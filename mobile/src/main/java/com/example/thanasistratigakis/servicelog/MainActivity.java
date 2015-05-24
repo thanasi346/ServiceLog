@@ -7,7 +7,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
+
 import com.parse.Parse;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import static com.example.thanasistratigakis.servicelog.R.id.tabLog;
 
@@ -68,7 +71,20 @@ public class MainActivity extends ActionBarActivity {
         // only write this line once (or else it will crash)
         fragmentTransaction.commit();
 
-        Location brooklynCity = new Location("CitySquashBrooklyn", "140 74th Street, Brooklyn, NY 11209", "We help kids learn squash!", "jaNGcb10Ry");
+
+
+        final Location location = new Location("CitySquashBrooklyn", "140 74th Street, Brooklyn, NY 11209", "We help kids learn squash!", ParseUser.getCurrentUser().getObjectId());
+        location.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(com.parse.ParseException e) {
+                if (e == null){
+                    Organization organization = new Organization("City Squash", ParseUser.getCurrentUser().getObjectId(), location.getObjectId());
+
+                }
+            }
+        });
+
+        ServiceRole role = new ServiceRole("Coach", "Coach squash", "Knowledge of squash and good with kids", true);
 
     }
 
