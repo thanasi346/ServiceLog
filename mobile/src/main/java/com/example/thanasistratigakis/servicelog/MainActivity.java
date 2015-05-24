@@ -55,11 +55,17 @@ public class MainActivity extends ActionBarActivity {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         //add the content for logTab container
-        TabContainerLogFragment logFragment = new TabContainerLogFragment();
+        TabContentLogFragment logFragment = new TabContentLogFragment();
         fragmentTransaction.add(R.id.tabLog, logFragment);//(R.id.tabLogContainer, logFragment);
+        // add the content for messengerTab container
+        TabContentMessengerFragment msgFragment = new TabContentMessengerFragment();
+        fragmentTransaction.add(R.id.tabMessenger, msgFragment);
         // add the content for discoverTab container
-        TabContainerDiscoverFragment discFragment = new TabContainerDiscoverFragment();
+        TabContentDiscoverFragment discFragment = new TabContentDiscoverFragment();
         fragmentTransaction.add(R.id.tabDiscover, discFragment);
+        // add the content for myAccountTab container
+        TabContentMyAccountFragment myAccFragment = new TabContentMyAccountFragment();
+        fragmentTransaction.add(R.id.tabMyAccount, myAccFragment);
         // only write this line once (or else it will crash)
         fragmentTransaction.commit();
 

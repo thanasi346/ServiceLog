@@ -12,14 +12,14 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link TabContainerLogFragment.OnFragmentInteractionListener} interface
+ * {@link TabContentMessengerFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link TabContainerLogFragment#newInstance} factory method to
+ * Use the {@link TabContentMessengerFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TabContainerLogFragment extends Fragment {
-//    // TODO: Rename parameter arguments, choose names that match
-//    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+public class TabContentMessengerFragment extends Fragment {
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 //    private static final String ARG_PARAM1 = "param1";
 //    private static final String ARG_PARAM2 = "param2";
 //
@@ -35,22 +35,22 @@ public class TabContainerLogFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TabContainerLogFragment.
+     * @return A new instance of fragment TabContentMessengerFragment.
      */
-//    // TODO: Rename and change types and number of parameters
-//    public static TabContainerLogFragment newInstance(String param1, String param2) {
-//        TabContainerLogFragment fragment = new TabContainerLogFragment();
+    // TODO: Rename and change types and number of parameters
+//    public static TabContentMessengerFragment newInstance(String param1, String param2) {
+//        TabContentMessengerFragment fragment = new TabContentMessengerFragment();
 //        Bundle args = new Bundle();
 //        args.putString(ARG_PARAM1, param1);
 //        args.putString(ARG_PARAM2, param2);
 //        fragment.setArguments(args);
 //        return fragment;
 //    }
-
-//    public TabContainerLogFragment() {
+//
+//    public TabContentMessengerFragment() {
 //        // Required empty public constructor
 //    }
-
+//
 //    @Override
 //    public void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -64,17 +64,16 @@ public class TabContainerLogFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-        return inflater.inflate(R.layout.fragment_tab_container_log, container, false);
+        return inflater.inflate(R.layout.fragment_tab_content_messenger, container, false);
     }
 
-//    // TODO: Rename method, update argument and hook method into UI event
+    // TODO: Rename method, update argument and hook method into UI event
 //    public void onButtonPressed(Uri uri) {
 //        if (mListener != null) {
 //            mListener.onFragmentInteraction(uri);
 //        }
 //    }
-
+//
 //    @Override
 //    public void onAttach(Activity activity) {
 //        super.onAttach(activity);
@@ -85,7 +84,7 @@ public class TabContainerLogFragment extends Fragment {
 //                    + " must implement OnFragmentInteractionListener");
 //        }
 //    }
-
+//
 //    @Override
 //    public void onDetach() {
 //        super.onDetach();
