@@ -1,5 +1,7 @@
 package com.example.thanasistratigakis.servicelog;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -7,6 +9,8 @@ import android.view.MenuItem;
 import android.widget.TabHost;
 
 import com.parse.Parse;
+
+import static com.example.thanasistratigakis.servicelog.R.id.tabLog;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -28,7 +32,7 @@ public class MainActivity extends ActionBarActivity {
 
         tabHost.setup();
         TabHost.TabSpec tabSpec = tabHost.newTabSpec("logTab");
-        tabSpec.setContent(R.id.tabLog);
+        tabSpec.setContent(tabLog);
         tabSpec.setIndicator("Log");
         tabHost.addTab(tabSpec);
 
@@ -46,6 +50,18 @@ public class MainActivity extends ActionBarActivity {
         tabSpec.setContent(R.id.tabMyAccount);
         tabSpec.setIndicator("MyAcc");
         tabHost.addTab(tabSpec);
+
+
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        //add the content for logTab container
+        TabContainerLogFragment logFragment = new TabContainerLogFragment();
+        fragmentTransaction.add(R.id.tabLog, logFragment);//(R.id.tabLogContainer, logFragment);
+        // add the content for discoverTab container
+        TabContainerDiscoverFragment discFragment = new TabContainerDiscoverFragment();
+        fragmentTransaction.add(R.id.tabDiscover, discFragment);
+        // only write this line once (or else it will crash)
+        fragmentTransaction.commit();
 
     }
 

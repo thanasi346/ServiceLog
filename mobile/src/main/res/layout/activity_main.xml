@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="0dp"
     android:paddingRight="0dp"
@@ -27,13 +27,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
 
-                <LinearLayout
+                <RelativeLayout
                     android:id="@+id/tabLog"
                     android:layout_width="match_parent"
                     android:layout_height="511dp"
                     android:orientation="vertical"
                     android:background="#000000">
-                </LinearLayout>
+                </RelativeLayout>
 
                 <LinearLayout
                     android:id="@+id/tabMessenger"
@@ -64,4 +64,4 @@
 
         </LinearLayout>
     </TabHost>
-</RelativeLayout>
+</FrameLayout>

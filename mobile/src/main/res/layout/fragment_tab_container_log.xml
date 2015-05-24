@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.thanasistratigakis.servicelog.TabContainerLogFragment"
     android:background="#BB6B6B"
-    >
+    android:id="@+id/tabLogContent">
 
     <TextView
         android:layout_width="match_parent"
