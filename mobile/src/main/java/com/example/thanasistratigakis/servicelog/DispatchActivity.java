@@ -18,7 +18,7 @@ public class DispatchActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         // Enable Local Datastore.
-        //Parse.enableLocalDatastore(this);
+        Parse.enableLocalDatastore(this);
 
         ParseObject.registerSubclass(Organization.class);
         ParseObject.registerSubclass(Location.class);
